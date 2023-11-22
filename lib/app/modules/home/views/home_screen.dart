@@ -13,15 +13,14 @@ class HomeScreen extends StatelessWidget {
     final ProductController productController = Get.put(ProductController());
 
     return Container(
-      color: Colors.black,
+      color: Color(0xffEEDCC6),
       child: ListView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
         children: [
-          
           const Text(
             "What would you like your sushi today?",
             style: TextStyle(
-                color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
+                color: Colors.black, fontSize: 18, fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: 15),
           SizedBox(
@@ -36,11 +35,11 @@ class HomeScreen extends StatelessWidget {
                     width: width * 0.27,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(7.5),
-                      color: const Color(0xff230C02),
+                      color: Colors.amber,
                     ),
                     child: Center(
                       child: Text(
-                        "Sushi",
+                        "All",
                         style: GoogleFonts.dmSans(
                           fontSize: width * 0.04,
                           color: Colors.white,
@@ -62,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        "Burger",
+                        "Popular",
                         style: GoogleFonts.dmSans(
                           color: Colors.white,
                           fontSize: width * 0.04,
@@ -84,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        "Pizza",
+                        "Rainy",
                         style: GoogleFonts.dmSans(
                           color: Colors.white,
                           fontSize: width * 0.04,
@@ -102,15 +101,16 @@ class HomeScreen extends StatelessWidget {
           const Text(
             "Recommendation",
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 18,
               fontWeight: FontWeight.w700,
             ),
           ),
           const SizedBox(height: 15),
           Container(
+            color: Colors.black,
             height: height ,
-            width: width * 0.9,
+            width: width,
             child: Obx(() {
               if (productController.products.isEmpty) {
                 if (productController.products.isEmpty) {
@@ -130,8 +130,8 @@ class HomeScreen extends StatelessWidget {
                         vertical: width * 0.01,
                       ),
                       child: Card(
-                        color: const Color.fromARGB(255, 32, 34, 45),
-                        elevation: 0.4,
+                        color: const Color(0xffEEDCC6),
+                        elevation: 0.2,
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12)),
                         ),
@@ -146,8 +146,8 @@ class HomeScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(12),
                                   child: Image.network(
                                     productController.products[index].image,
-                                    width: width * 0.3,
-                                    height: height * 0.15,
+                                    width: width * 0.2,
+                                    height: height * 0.10,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -159,24 +159,24 @@ class HomeScreen extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        productController.products[index].title,
-                                        style: GoogleFonts.dmSans(
-                                          fontSize: width * 0.045,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white,
-                                        ),
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2,
-                                      ),
-                                      const SizedBox(height: 10),
-                                      Text(
                                         productController
                                             .products[index].restaurantChain,
                                         style: GoogleFonts.dmSans(
                                           fontSize: width * 0.04,
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.green,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.black,
                                         ),
+                                      ),
+                                      const SizedBox(height: 10),
+                                      Text(
+                                        productController.products[index].title,
+                                        style: GoogleFonts.dmSans(
+                                          fontSize: width * 0.045,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.black,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 2,
                                       ),
                                     ],
                                   ),
