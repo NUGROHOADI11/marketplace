@@ -36,13 +36,14 @@ class HomeScreen extends StatelessWidget {
                     width: width * 0.27,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(7.5),
-                      color: const Color(0xffffb94f),
+                      color: const Color(0xff230C02),
                     ),
                     child: Center(
                       child: Text(
                         "Sushi",
                         style: GoogleFonts.dmSans(
                           fontSize: width * 0.04,
+                          color: Colors.white,
                           fontWeight: FontWeight.w600,
                           letterSpacing: 1,
                         ),
